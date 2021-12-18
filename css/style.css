@@ -19,6 +19,7 @@
 body {
   background-color: var(--color-dark-sh2);
   color: var(--color-dark-sh4);
+  position: relative;
 }
 
 a {
@@ -32,7 +33,7 @@ a {
 
 .icon {
   color: var(--color-dark-sh5);
-  font-size: 1.3rem;
+  font-size: 1rem;
 }
 
 .icon:hover {
@@ -73,9 +74,23 @@ a {
   margin: 0 auto;
 }
 
+.image__round{
+  border-radius: 50%;
+  object-position: center;
+  object-fit: cover;
+}
+
+
+.position-sticky{
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  z-index: 1;
+  display: block;
+}
+
 .nav {
   padding: 1.25rem;
-  position: fixed;
   left: 0;
   top: 0;
   right: 0;
@@ -102,6 +117,8 @@ a {
   color: var(--color-dark-sh5);
   font-family: "Roboto", sans-serif;
   cursor: pointer;
+  text-align: center;
+  align-self: center;
 }
 
 .link:hover {
@@ -115,13 +132,10 @@ a {
   display: flex;
   flex-direction: column;
   border-radius: 5px;
-  padding: 0.8rem 1rem 0.8rem 0.8rem;
+  padding: 0.5rem 1rem 0.5rem 0.5rem;
   background-color: var(--color-dark-sh1);
-  border: 1px solid var(--color-dark-sh5);
-}
-
-.contacts__icon {
-  margin: 0.3rem;
+  border: 1px solid var(--color-dark-sh3);
+  gap: 0.5rem;
 }
 
 .block {
@@ -132,6 +146,10 @@ a {
 .block--profile {
   background-color: var(--color-dark-sh2);
   height: auto;
+}
+
+.block__header{
+  margin-bottom: 1rem;
 }
 
 .block__heading {
@@ -147,55 +165,12 @@ a {
   margin-top: 5rem;
 }
 
-.codespace {
-  margin: 4rem 0 1rem 0;
-  background-color: var(--color-dark-sh1);
-  height: 100vh;
-  width: 90vw;
-  font-family: "Source Code Pro", monospace;
-  font-size: 1rem;
-  line-height: 1.5rem;
-  word-wrap: break-word;
-}
-
-.codespace__header {
-  height: 1rem;
-  border-radius: 5px 5px 0 0;
-  background-color: var(--color-dark-sh5);
-}
-
-.codespace__content {
-  padding: 2rem;
-}
-
-.codespace__block {
-  margin: 1rem 0;
-}
-
-.codespace__block--code {
-  font-size: 1rem;
-  font-weight: normal;
-}
-
-.codespace__block--output {
-  text-indent: 3rem;
+.block__content{
+  font-family: "Roboto", sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 1.3px;
+  line-height: 1.2rem;
   color: var(--color-dark-sh5);
-}
-
-.codespace__block--output::before {
-  content: "=>";
-}
-
-.codespace__caret {
-  color: var(--color-dark-sh5);
-}
-
-.codespace--highlight {
-  color: rgba(255, 99, 71, 0.692);
-}
-
-.codespace--string {
-  color: #88dcfe;
 }
 
 .card {
@@ -219,6 +194,7 @@ a {
   align-items: center;
   justify-content: space-between;
   margin-top: 0.5rem;
+  
 }
 
 .card__title {
@@ -234,6 +210,7 @@ a {
 .block--projects {
   height: 100vh;
   background-color: black;
+
 }
 
 .block--projects .cards {
@@ -241,27 +218,55 @@ a {
 }
 
 .block--projects .block__header {
-  position: relative;
-  width: 100%;
-  height: auto;
+  align-self: flex-start;
 }
 
 .block--projects .block__heading {
   font-size: 4rem;
-  position: absolute;
-  top: -53px;
-  left: -20px;
 }
 
 .block--projects .card__img {
   background-color: gray;
 }
 
-.block--footer {
+.footer {
   text-align: center;
   background-color: black;
   color: var(--color-dark-sh5);
   height: 40vh;
+}
+
+.block--profile{
+  padding: 4rem;
+}
+
+.block--profile .wrapper{
+  margin: auto;
+  width: 50%;
+  gap: 3rem;
+}
+
+
+.block--profile .image{
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+  object-position: center;
+  object-fit: cover;
+  border: 3px solid var(--color-dark-sh3);
+  padding: 10px;
+  border-style: dashed;
+}
+
+.block--profile .block__content{
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.block--profile .block__footer{
+  margin-top: 1rem;
 }
 
 @media screen and (min-width: 800px) {
@@ -291,17 +296,38 @@ a {
   .nav {
     border-bottom: 1px solid var(--color-dark-sh3);
   }
-  .block--projects {
-    height: 100%;
-    padding: 7rem;
+  
+  .nav .link{
+    font-size: 0.75rem;
   }
 
-  .block--projects .block__header {
-    margin-bottom: 4.5rem;
+  .block--projects {
+    height: 100%;
+    padding: 7rem 0;
+  }
+
+  .block--projects .block__heading{
+    font-size: 3rem;
+    width: 5ch;
   }
 
   .block--projects .cards {
     flex-direction: column;
     width: 100%;
+  }
+
+  .block--profile .wrapper{
+    flex-direction: column;
+    text-align: center;
+    max-width: 75%;
+  }
+
+  .block--profile .image{
+    height: 180px;
+    width: 180px;
+  }
+
+  .block--profile .block__content{
+    -webkit-line-clamp: 4;
   }
 }

@@ -1,0 +1,48 @@
+
+.block--projects {
+    height: 100%;
+    padding: 7rem 0;
+    background-color: black;
+}
+
+
+.block--projects .cards {
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.block--projects .card {
+    width: 100%;
+    flex: 1 0 30%;
+}
+
+@media screen and (max-width: 800px) {
+
+    .block--projects .block__heading {
+        margin-bottom: 1rem;
+        width: 100%;
+    }
+
+    .block--projects .cards {
+        flex-direction: row;
+    }
+    .block--projects .card {
+      flex: none;
+      height: 50vw;
+      width: 45vw;
+    }
+  
+}
+
+@media screen and (min-width: 800px) {
+    .block--projects .block__header {
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 576px) { 
+    .block--projects .block__heading {
+        width: 5ch;
+        padding-left: 0.3rem;
+    }
+}

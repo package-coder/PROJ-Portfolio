@@ -2,7 +2,7 @@
 function useHeader()
 {
     return '
-      <header>
+      <header class="position-sticky">
         <nav class="nav flex toggler">
             <img src="../images/me.jpg" class="nav__image" alt="">
             <ul class="nav__link flex toggler__expand">

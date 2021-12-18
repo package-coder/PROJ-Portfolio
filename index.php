@@ -1,8 +1,4 @@
-<!--
-    Pujado, Christian Paul A
-    BSCS
-    C2TLA#3
--->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,13 +8,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Christian Paul Pujado</title>
     <link rel="stylesheet" href="css/style.css">
-
+    
 <body>
-    <header>
+    <header class="position-sticky">
         <nav class="nav flex toggler">
             <img src="images/me.jpg" class="nav__image" alt="">
             <ul class="nav__link flex toggler__expand">
-                <li class="link"><a href="pages/index.php">Home</a></li>
+                <li class="link"><a href="index.php">Home</a></li>
                 <li class="link"><a href="pages/developer.php">About Developer</a></li>
                 <li class="link"><a href="pages/projects.php">Projects</a></li>
             </ul>
@@ -32,10 +28,12 @@
         </section>
 
         <section class="block block--projects flex flex__column f__center">
+            <div>
             <div class="block__header">
                 <h1 class="block__heading">Featured Projects</h1>
-            </div>
+            </div>  
             <div class="block__content flex cards f__center">
+            
                 <a class="card">
                     <img src="" alt="" class="card__img">
 
@@ -60,104 +58,39 @@
                         <p class="card__date">11/11/11</p>
                     </footer>
                 </a>
+            </div>
             </div>
             <footer class="block__footer">
-                <a class="link">View All</a>
+                <a href="pages/projects.php" class="link">View All</a>
             </footer>
         </section>
 
-        <section class="block block--profile flex flex__column f__center">
-            <div class="codespace">
-                <header class="codespace__header"></header>
-                <div class="codespace__content">
-                    <section class="codespace__block">
-                        <h2 class="codespace__block--code">
-                            <span class="codespace--highlight">person</span>.getFullName()
-                            <span class="codespace__caret">
-                                <i class="fas fa-caret-left"></i>
-                            </span>
-                        </h2>
-                        <p class="codespace__block--output">
-                            "Christian Paul Pujado"
-                        </p>
-                    </section>
-                    <section class="codespace__block">
-                        <h2 class="codespace__block--code">
-                            <span class="codespace--highlight">person</span>.getBirthDate(format(<span class="codespace--string">"DD MMM YYYY"</span>))
-                            <span class="codespace__caret">
-                                <i class="fas fa-caret-left"></i>
-                            </span>
-                        </h2>
-                        <p class="codespace__block--output">
-                            16 Feb 2001
-                        </p>
-                    </section>
-                    <section class="codespace__block">
-                        <h2 class="codespace__block--code">
-                            <span class="codespace--highlight">person</span>.getLocation()
-                            <span class="codespace__caret">
-                                <i class="fas fa-caret-left"></i>
-                            </span>
-                        </h2>
-                        <p class="codespace__block--output">
-                            "Zone 2 #080 Lerma Naga City, Province of Camarines Sur"
-                        </p>
-                    </section>
-                    <section class="codespace__block">
-                        <h2 class="codespace__block--code">
-                            <span class="codespace--highlight">person</span>.getEducation()
-                            <span class="codespace__caret">
-                                <i class="fas fa-caret-left"></i>
-                            </span>
-                        </h2>
-                        <p class="codespace__block--output">
-                            "Bachelor of Science In Computer Science At University Of Nueva Caceres"
-                        </p>
-                    </section>
-                    <section class="codespace__block">
-                        <h2 class="codespace__block--code">
-                            <span class="codespace--highlight">person</span>.getInterest()
-                            <span class="codespace__caret">
-                                <i class="fas fa-caret-left"></i>
-                            </span>
-                        </h2>
-                        <p class="codespace__block--output">
-                            {"Coding", "Watching Anime", "Playing Leagues"}
-                        </p>
-                    </section>
-                    <section class="codespace__block">
-                        <h2 class="codespace__block--code">
-                            <span class="codespace--highlight">person</span>.getPreferLanguages(Order.DSC)
-                            <span class="codespace__caret">
-                                <i class="fas fa-caret-left"></i>
-                            </span>
-                        </h2>
-                        <p class="codespace__block--output">
-                            {"Java", "Python", "JS" , "C++", "C#", "C"}
-                        </p>
-                    </section>
+        <section class="block block--profile">
+            <div class="wrapper flex f__center">
+                <span class="image-wrapper">
+                    <img src="images/me.jpg" alt="image of christian paul pujado" class="image">
+                </span>
+                <div>
+                    <div class="block__header">
+                        <h1 class="block__heading">About Developer</h1>
+                    </div>  
+                    <p class="block__content">
+                    I am Chris and I am a Software Engineer, I specialize in computations and logic. I am the type of a programmer who constantly seeks out innovative solutions to everyday problems.  I have a passion for processes, and my 3 years of doing this have nurtured and enhanced my  analytical and collaboration skills, and I would love to be part and work with a team.  I know I still have enough room for improvement and I am very much willing to work on that.
+                    </p>
+                    <div class="block__footer"><a href="pages/developer.php" class="link"><strong>Read More</strong></a></div>
                 </div>
             </div>
         </section>
 
 
     </main>
-    <aside class="contacts">
-        <a class="icon contacts__icon">
-            <i class="fab fa-facebook"></i>
-        </a>
-        <a class="icon contacts__icon">
-            <i class="fab fa-github"></i>
-        </a>
-        <a class="icon contacts__icon">
-            <i class="fab fa-linkedin-in"></i>
-        </a>
-        <a class="icon contacts__icon">
-            <i class="fas fa-at"></i>
-        </a>
-    </aside>
+    
     <?php
+    
     include "components/footer.component.php";
+    include "components/aside.component.php";
+    
+    echo useAside();
     echo useFooter();
     ?>
 
