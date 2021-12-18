@@ -5,32 +5,33 @@
 -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Christian Paul Pujado</title>
     <link rel="stylesheet" href="css/style.css">
+
 <body>
-    <header>
-        <nav class="nav flex flex__between">
-            <img src="images/me.jpg" class="nav__image" alt="">
-            <span class="icon position__fixed"><i class="fas fa-ellipsis-h"></i></span>
-        </nav>
-    </header>
+    <?php
+    include "component/header.component.php";
+    echo useHeader("images/me.jpg");
+    ?>
+
     <main>
-        <section class="block flex flex__column f__center">
+        <section class="block block--home flex flex__column f__center">
             <h1 class="block__heading">Hi, I'm Chris</h1>
             <p class="block__subheading">A Software Engineer</p>
         </section>
 
-        <section class="block block--projects flex flex__column f__center">            
+        <section class="block block--projects flex flex__column f__center">
             <div>
                 <div class="block__header">
                     <h1 class="block__heading">Featured Projects</h1>
                 </div>
                 <div class="block__content flex">
-                
+
                     <a class="card">
                         <img src="" alt="" class="card__img">
 
@@ -57,6 +58,9 @@
                     </a>
                 </div>
             </div>
+            <footer class="block__footer">
+                <a class="link">View All</a>
+            </footer>
         </section>
 
         <section class="block block--profile flex flex__column f__center">
@@ -133,7 +137,7 @@
             </div>
         </section>
 
-        
+
     </main>
     <aside class="contacts">
         <a class="icon contacts__icon">
@@ -149,9 +153,12 @@
             <i class="fas fa-at"></i>
         </a>
     </aside>
-    <footer>
+    <?php
+    include "component/footer.component.php";
+    echo useFooter();
+    ?>
 
-    </footer>
     <script src="https://kit.fontawesome.com/5516339156.js" crossorigin="anonymous"></script>
 </body>
+
 </html>
