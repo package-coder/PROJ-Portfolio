@@ -201,6 +201,7 @@ a {
 .card {
   height: 280px;
   width: 300px;
+  max-width: 300px;
   display: flex;
   flex-direction: column;
   cursor: pointer;
@@ -208,7 +209,6 @@ a {
 
 .card__img {
   flex-grow: 1;
-  flex-shrink: 1;
   display: inline;
 
   background-color: lightgray;
@@ -236,7 +236,7 @@ a {
   background-color: black;
 }
 
-.block--projects .block__content {
+.block--projects .cards {
   gap: 1.5rem;
 }
 
@@ -288,8 +288,8 @@ a {
 }
 
 @media screen and (max-width: 800px) {
-  .nav .nav__link {
-    gap: 0.5rem;
+  .nav {
+    border-bottom: 1px solid var(--color-dark-sh3);
   }
   .block--projects {
     height: 100%;
@@ -300,7 +300,8 @@ a {
     margin-bottom: 4.5rem;
   }
 
-  .block--projects .block__content {
+  .block--projects .cards {
     flex-direction: column;
+    width: 100%;
   }
 }

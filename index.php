@@ -14,10 +14,16 @@
     <link rel="stylesheet" href="css/style.css">
 
 <body>
-    <?php
-    include "component/header.component.php";
-    echo useHeader("images/me.jpg");
-    ?>
+    <header>
+        <nav class="nav flex toggler">
+            <img src="images/me.jpg" class="nav__image" alt="">
+            <ul class="nav__link flex toggler__expand">
+                <li class="link"><a href="pages/index.php">Home</a></li>
+                <li class="link"><a href="pages/developer.php">About Developer</a></li>
+                <li class="link"><a href="pages/projects.php">Projects</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <main>
         <section class="block block--home flex flex__column f__center">
@@ -26,37 +32,34 @@
         </section>
 
         <section class="block block--projects flex flex__column f__center">
-            <div>
-                <div class="block__header">
-                    <h1 class="block__heading">Featured Projects</h1>
-                </div>
-                <div class="block__content flex">
+            <div class="block__header">
+                <h1 class="block__heading">Featured Projects</h1>
+            </div>
+            <div class="block__content flex cards f__center">
+                <a class="card">
+                    <img src="" alt="" class="card__img">
 
-                    <a class="card">
-                        <img src="" alt="" class="card__img">
+                    <footer class="card__footer">
+                        <h1 class="card__title">Title</h1>
+                        <p class="card__date">11/11/11</p>
+                    </footer>
+                </a>
+                <a class="card">
+                    <img src="" alt="" class="card__img">
 
-                        <footer class="card__footer">
-                            <h1 class="card__title">Title</h1>
-                            <p class="card__date">11/11/11</p>
-                        </footer>
-                    </a>
-                    <a class="card">
-                        <img src="" alt="" class="card__img">
+                    <footer class="card__footer">
+                        <h1 class="card__title">Title</h1>
+                        <p class="card__date">11/11/11</p>
+                    </footer>
+                </a>
+                <a class="card">
+                    <img src="" alt="" class="card__img">
 
-                        <footer class="card__footer">
-                            <h1 class="card__title">Title</h1>
-                            <p class="card__date">11/11/11</p>
-                        </footer>
-                    </a>
-                    <a class="card">
-                        <img src="" alt="" class="card__img">
-
-                        <footer class="card__footer">
-                            <h1 class="card__title">Title</h1>
-                            <p class="card__date">11/11/11</p>
-                        </footer>
-                    </a>
-                </div>
+                    <footer class="card__footer">
+                        <h1 class="card__title">Title</h1>
+                        <p class="card__date">11/11/11</p>
+                    </footer>
+                </a>
             </div>
             <footer class="block__footer">
                 <a class="link">View All</a>
@@ -154,7 +157,7 @@
         </a>
     </aside>
     <?php
-    include "component/footer.component.php";
+    include "components/footer.component.php";
     echo useFooter();
     ?>
 

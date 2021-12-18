@@ -12,13 +12,46 @@
 
 <body>
     <?php
-    include "../component/header.component.php";
-    echo useHeader("../images/me.jpg");
+    include "../components/header.component.php";
+    echo useHeader();
     ?>
 
+    <main>
+        <section class="block block--projects flex flex__column f__center">
+            <div>
+                <div class="block__header">
+                    <h1 class="block__heading">Featured Projects</h1>
+                </div>
+                <a class="card">
+                    <img src="" alt="" class="card__img">
+
+                    <footer class="card__footer">
+                        <h1 class="card__title">Title</h1>
+                        <p class="card__date">11/11/11</p>
+                    </footer>
+                </a>
+                <a class="card">
+                    <img src="" alt="" class="card__img">
+
+                    <footer class="card__footer">
+                        <h1 class="card__title">Title</h1>
+                        <p class="card__date">11/11/11</p>
+                    </footer>
+                </a>
+                <a class="card">
+                    <img src="" alt="" class="card__img">
+
+                    <footer class="card__footer">
+                        <h1 class="card__title">Title</h1>
+                        <p class="card__date">11/11/11</p>
+                    </footer>
+                </a>
+            </div>
+        </section>
+    </main>
 
     <?php
-    include "../component/footer.component.php";
+    include "../components/footer.component.php";
     echo useFooter();
     ?>
 </body>
