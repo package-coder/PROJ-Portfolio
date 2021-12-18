@@ -1,3 +1,7 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Chivo:wght@900&family=Montserrat:wght@300;400;500;700&family=Open+Sans:wght@300;400;700&display=swap');
+
+
 *,
 *::before,
 *::after{
@@ -47,6 +51,14 @@ body{
     align-items: center;
 }
 
+.align-items-center{
+    align-items: center;
+}
+
+.justify-content-center{
+    justify-content: center;
+}
+
 .flex__between{
     justify-content: space-between;
 }
@@ -75,6 +87,8 @@ body{
     border-radius: 5px;
     padding: 0.8rem 1rem 0.8rem 0.8rem;
     background-color: var(--color-dark-sh1);
+    border: 1px solid var(--color-dark-sh5);
+
 }
 
 .contacts__icon{
@@ -87,7 +101,8 @@ body{
 }
 
 .block--profile{
-    background-color: var(--color-dark-sh3);
+    background-color: var(--color-dark-sh2);
+    height: auto;
 }
 
 .block__heading{
@@ -150,6 +165,66 @@ body{
     color: #88DCFE;
 }
 
+.card{
+    height: 280px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.card__img{
+    flex-grow: 1;
+    flex-shrink: 1;
+    display: inline;
+    
+    background-color: lightgray;
+}
+
+.card__footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+}
+
+.card__title{
+    font-family: 'Chivo', sans-serif;
+    font-size: 1.2rem;
+}
+
+.card__date{
+    font-family: 'Roboto', sans-serif;
+    color: var(--color-dark-sh5);
+}
+
+
+.block--projects{
+    height: 100vh;
+    background-color: black;
+}
+
+.block--projects .block__content{
+    gap: 1.5rem;
+}
+
+.block--projects .block__header{
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.block--projects .block__heading{
+    font-size: 4rem;
+    position: absolute;
+    top: -53px;
+    left: -20px;
+}
+
+.block--projects .card__img{
+    background-color: gray;
+}
+
 @media screen and (min-width: 800px) {
     .contacts{
         bottom: 2rem;
@@ -170,5 +245,24 @@ body{
 
     .codespace__block{
         margin: 2rem 0;
+    }
+
+    
+    
+}
+
+@media screen and (max-width: 800px) {
+    .block--projects{
+        height: 100%;
+        padding: 7rem;
+    }
+
+    .block--projects .block__header{
+        margin-bottom: 4.5rem;
+    }
+    
+
+    .block--projects .block__content{
+        flex-direction: column;
     }
 }
