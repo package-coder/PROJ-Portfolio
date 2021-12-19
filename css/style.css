@@ -90,11 +90,11 @@ a {
 }
 
 .nav {
-  padding: 1.25rem;
+  padding: 1.50rem;
   left: 0;
   top: 0;
   right: 0;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   background-color: #1e1e1e;
   z-index: 999;
@@ -109,6 +109,7 @@ a {
 
 .nav__link {
   gap: 1rem;
+  padding: 0;
 }
 
 .link {
@@ -154,6 +155,8 @@ a {
 
 .block__heading {
   font-size: 3rem;
+  line-height: 2.3rem;
+  color: white;
 }
 
 .block__subheading {
@@ -166,7 +169,8 @@ a {
 }
 
 .block__content{
-  font-family: "Roboto", sans-serif;
+  font-family: 'Open Sans', sans-serif;
+
   font-size: 0.85rem;
   letter-spacing: 1.3px;
   line-height: 1.2rem;
@@ -180,13 +184,16 @@ a {
   display: flex;
   flex-direction: column;
   cursor: pointer;
+
 }
 
 .card__img {
   flex-grow: 1;
   display: inline;
 
-  background-color: lightgray;
+  background-color: black;
+  border-radius: 2px;
+  opacity: 93%;
 }
 
 .card__footer {
@@ -194,16 +201,18 @@ a {
   align-items: center;
   justify-content: space-between;
   margin-top: 0.5rem;
-  
+  color: var(--color-dark-sh4);
+  font-family: 'Open Sans', sans-serif;
+
 }
 
 .card__title {
-  font-family: "Chivo", sans-serif;
+  font-weight: 700;
   font-size: 1.2rem;
 }
 
 .card__date {
-  font-family: "Roboto", sans-serif;
+  font-weight: 300;
   color: var(--color-dark-sh5);
 }
 

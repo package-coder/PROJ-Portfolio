@@ -19,69 +19,42 @@
 
     <main>
     <section class="block block--projects flex flex__column f__center">
-            <div>
-            <div class="block__header">
-                <h1 class="block__heading">Project Collection</h1>
-            </div>  
-            <div class="block__content flex cards f__center">
-            
-                <a class="card">
-                    <img src="" alt="" class="card__img">
+            <div class="wrapper">
+                <div class="block__header">
+                    <h1 class="block__heading">Project Collection</h1>
+                </div>  
+                <div class="block__content flex cards f__center">
+                    
+                    <?php
+                        require_once "../backend/config.php";
+                        $sql = "SELECT * FROM projects";
 
-                    <footer class="card__footer">
-                        <h1 class="card__title">Title</h1>
-                        <p class="card__date">11/11/11</p>
-                    </footer>
-                </a>
-                <a class="card">
-                    <img src="" alt="" class="card__img">
+                        if($result = mysqli_query($link, $sql)){
+                            if(mysqli_num_rows($result) > 0){
 
-                    <footer class="card__footer">
-                        <h1 class="card__title">Title</h1>
-                        <p class="card__date">11/11/11</p>
-                    </footer>
-                </a>
-                <a class="card">
-                    <img src="" alt="" class="card__img">
+                                while($row = mysqli_fetch_array($result)){
+                                    echo 
+                                    "<a class=\"card\" href=". $row['url'] ." target=\"_blank\">
+                                        <img src=../". $row['path'] ." alt=\"\" class=\"card__img\">
 
-                    <footer class="card__footer">
-                        <h1 class="card__title">Title</h1>
-                        <p class="card__date">11/11/11</p>
-                    </footer>
-                </a>
-                <a class="card">
-                    <img src="" alt="" class="card__img">
+                                        <footer class=\"card__footer\">
+                                            <h1 class=\"card__title\">". ucwords($row['name']) ."</h1>
+                                            <p class=\"card__date\">". $row['datePublished'] ."</p>
+                                        </footer>
+                                    </a>";
+                                }
 
-                    <footer class="card__footer">
-                        <h1 class="card__title">Title</h1>
-                        <p class="card__date">11/11/11</p>
-                    </footer>
-                </a>
-                <a class="card">
-                    <img src="" alt="" class="card__img">
+                                mysqli_free_result($result);
+                            }
+                        }
+                        else{
+                            echo "<div style=\"background-color: black; color: white; font-weight: bold;\">
+                                    ERROR: Could not able to execute $sql. " . mysqli_error($link) . "
+                                </div> " ;
+                        }
+                    ?>
 
-                    <footer class="card__footer">
-                        <h1 class="card__title">Title</h1>
-                        <p class="card__date">11/11/11</p>
-                    </footer>
-                </a>
-                <a class="card">
-                    <img src="" alt="" class="card__img">
-
-                    <footer class="card__footer">
-                        <h1 class="card__title">Title</h1>
-                        <p class="card__date">11/11/11</p>
-                    </footer>
-                </a>
-                <a class="card">
-                    <img src="" alt="" class="card__img">
-
-                    <footer class="card__footer">
-                        <h1 class="card__title">Title</h1>
-                        <p class="card__date">11/11/11</p>
-                    </footer>
-                </a>
-            </div>
+                </div>
             </div>
            
         </section>

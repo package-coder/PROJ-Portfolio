@@ -17,7 +17,7 @@
     echo useHeader();
     ?>
 
-    <main>
+    <main class="flex flex__column">
         <section class="block block--profile block--about">
             <div class="wrapper flex f__center">
                 <span class="image-wrapper">
@@ -40,14 +40,15 @@
 
         <section class="block block--hobbies">
             <!--Away From KeyBoard-->
-            <div class="wrapper flex flex__column f__center">
-                <div class="block__header">
-                    <h1 class="block__heading">Away From Keyboard</h1>
+            <div class="wrapper flex f__center">
+                <div>
+                    <div class="block__header">
+                        <h1 class="block__heading">Away From Keyboard</h1>
+                    </div>
+                    <p class="block__content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam accusamus dignissimos at, quidem temporibus magnam molestias architecto deserunt facilis, blanditiis accusantium? Soluta laboriosam nemo cupiditate pariatur praesentium, obcaecati architecto ea odit earum, iusto numquam cum deleniti accusantium, explicabo autem. Quaerat ea excepturi iure, error esse repellendus omnis ut voluptatem modi.</p>
+                    
                 </div>
-                <div class="block__content flex f__center">
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam accusamus dignissimos at, quidem temporibus magnam molestias architecto deserunt facilis, blanditiis accusantium? Soluta laboriosam nemo cupiditate pariatur praesentium, obcaecati architecto ea odit earum, iusto numquam cum deleniti accusantium, explicabo autem. Quaerat ea excepturi iure, error esse repellendus omnis ut voluptatem modi.</p>
-                    <img src="../images/me.jpg" alt="">
-                </div>
+                <img src="../images/controller.jpg" alt="controller" class="image">
             </div>
         </section>
 

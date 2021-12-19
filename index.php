@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +11,6 @@
 <body>
     <header class="position-sticky">
         <nav class="nav flex toggler">
-            <img src="images/me.jpg" class="nav__image" alt="">
             <ul class="nav__link flex toggler__expand">
                 <li class="link"><a href="index.php">Home</a></li>
                 <li class="link"><a href="pages/developer.php">About Developer</a></li>
@@ -31,37 +29,47 @@
             <div>
             <div class="block__header">
                 <h1 class="block__heading">Featured Projects</h1>
-            </div>  
+            </div>   
             <div class="block__content flex cards f__center">
+
+            <?php
+
+                require_once "backend/config.php";
+                $sql = "SELECT * 
+                        FROM projects 
+                        WHERE isFeatured=1
+                        LIMIT 3";
+
+                if($result = mysqli_query($link, $sql)){
+                    if(mysqli_num_rows($result) > 0){
+
+                        while($row = mysqli_fetch_array($result)){
+
+                            echo 
+                            "<a class=\"card\" href=". $row['url'] ." target=\"_blank\">
+                                <img src=". $row['path'] ." alt=\"\" class=\"card__img\">
             
-                <a class="card">
-                    <img src="" alt="" class="card__img">
-
-                    <footer class="card__footer">
-                        <h1 class="card__title">Title</h1>
-                        <p class="card__date">11/11/11</p>
-                    </footer>
-                </a>
-                <a class="card">
-                    <img src="" alt="" class="card__img">
-
-                    <footer class="card__footer">
-                        <h1 class="card__title">Title</h1>
-                        <p class="card__date">11/11/11</p>
-                    </footer>
-                </a>
-                <a class="card">
-                    <img src="" alt="" class="card__img">
-
-                    <footer class="card__footer">
-                        <h1 class="card__title">Title</h1>
-                        <p class="card__date">11/11/11</p>
-                    </footer>
-                </a>
+                                <footer class=\"card__footer\">
+                                    <h1 class=\"card__title\">". ucwords($row['name']) ."</h1>
+                                    <p class=\"card__date\">". $row['datePublished'] ."</p>
+                                </footer>
+                            </a>";
+                        }
+        
+                        mysqli_free_result($result);
+                    }
+                }
+                else{
+                    echo "<div style=\"background-color: black; color: white; font-weight: bold;\">
+                            ERROR: Could not able to execute $sql. " . mysqli_error($link) . "
+                        </div> " ;
+                }
+            ?>
+               
             </div>
             </div>
             <footer class="block__footer">
-                <a href="pages/projects.php" class="link">View All</a>
+                <a href="pages/projects.php" class="link"><strong>View All</strong></a>
             </footer>
         </section>
 
